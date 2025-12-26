@@ -15,4 +15,21 @@ describe('VerbsService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should return verbs with correct ID', () => {
+    const result = service.getAll();
+
+    expect(result[0]).toEqual({
+      base: 'meet',
+      id: 'meet',
+      past: 'met',
+      pastParticiple: 'met',
+      translation: 'встречать',
+    });
+  });
+
+  it('should return 90+ verbs', () => {
+    const result = service.getAll();
+    expect(result.length).toBeGreaterThan(90);
+  });
 });
