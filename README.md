@@ -1,5 +1,7 @@
 # 📚 English Learning Backend
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=const-y_english-backend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=const-y_english-backend)
+
 REST API для изучения неправильных английских глаголов.  
 Используется фронтендом для отображения слов, сохранения прогресса и аналитики.
 
