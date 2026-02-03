@@ -1,15 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { irregularVerbs } from '../dictionary/verbs';
+import { PrismaService } from '../prisma.service';
 
 @Injectable()
 export class VerbsService {
+  constructor(private prisma: PrismaService) {}
+
   getAll() {
-    return irregularVerbs.map(([base, past, pastParticiple, translation]) => ({
-      id: base,
-      base,
-      past,
-      pastParticiple,
-      translation,
-    }));
+    return this.prisma.verb.findMany();
   }
 }
