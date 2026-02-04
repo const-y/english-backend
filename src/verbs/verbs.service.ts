@@ -4,7 +4,7 @@ import { VerbResponseDto } from './dto/verb-response-dto/verb-response-dto';
 
 @Injectable()
 export class VerbsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   async getAll(): Promise<VerbResponseDto[]> {
     const verbs = await this.prisma.verb.findMany();
