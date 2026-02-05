@@ -1,3 +1,4 @@
+// sonarjs/prefer-top-level-await
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
