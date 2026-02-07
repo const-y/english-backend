@@ -21,6 +21,7 @@ RUN npm ci --omit=dev
 RUN npx prisma generate
 
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/prisma.config.ts ./
 
 EXPOSE 3000
 
