@@ -19,10 +19,9 @@ COPY package*.json ./
 COPY prisma ./prisma
 RUN npm ci --omit=dev
 RUN npx prisma generate
-RUN npx prisma migrate deploy
-RUN npm run seed
 
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/prisma.config.ts ./
 
 EXPOSE 3000
 
